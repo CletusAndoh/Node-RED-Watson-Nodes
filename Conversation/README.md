@@ -14,18 +14,19 @@ The Watson Conversation node uses the Watson conversation service to create virt
 ### Instructions
 
 1. Head over to bluemix and search for "conversation" in the catalog. Click on it, leave it unbound, choose the free plan and create the service. 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Service.png "Service")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Service.png "Service")
 
 2. We need to create our conversation. We need to create a workspace, define some intents and entites and create a dialog. Launch the conversation tool.
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Launch%20Tool.png "Launch")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Launch%20Tool.png "Launch")
 
 3. For the purposes of this tutorial, we are going to use the sample workspace that comes preloaded with the conversation service. Click on the car dashboard sample workspace. The service will populate the workspace with intents, entities and dialog. 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Workspace%20Homepage.png "Car Dash")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Car%20Dashboard%20Homepage.png "Car Dash")
 
 4. In Node-RED, drag out a http in node, a template node and a http response node. Wire them up. This first flow will serve as the homepage for you to interact with the conversation service. 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Template%20Flow.png "Template Flow")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Template%20Flow.png "Template Flow")
+
 5. Configure the http in node like so. 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/First%20HTTP%20In.png "First HTTP In")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/First%20HTTP%20In.png "First HTTP In")
 
 6. In the template node copy and paste in the code below
 ```
@@ -140,10 +141,10 @@ The Watson Conversation node uses the Watson conversation service to create virt
 ```
 
 7. Next, drag out another http in node, two function nodes, a conversation node and a http response node. Wire them up.
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Conversation%20Flow.png "Conversation Flow")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Conversation%20Flow.png "Conversation Flow")
 
 8. Configure the http in node like so
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Second%20HTTP%20In.png "Second HTTP In")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Second%20HTTP%20In.png "Second HTTP In")
 
 9. Configure the first function node with the code below. All this node does is, it pulls out the text you input into the service and any conversation context information
 ```javascript
@@ -157,12 +158,12 @@ msg.params = { "context": msg.req.body.context};
 return msg;
 ```
 10. In the conversation node, we need to enter a workspace ID. To get this ID, head back to your conversation service page. On the left hand side, click on the last icon to go back to your workspaces. Click the three ellipses on the car dashboard workspace and view details. Copy and paste the workspace ID it provides into your Node-RED conversation node. 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Workspace%20ID.png "Workspace ID") ![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Workspace%20ID%202.png "Workspace ID")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Workspace%20ID.png "Workspace ID") ![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Workspace%20ID%202.png "Workspace ID")
 **Note:** If the conversation node requires you to put in a username and password along with a workspace ID, you have to use the username and password specific to the car dashboard workspace. To get those credentials, go back to your car dashboard workspace home page and click on the deploy button
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Service%20Credentials%20Button.png "Deploy Button")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Service%20Credentials%20Button.png "Deploy Button")
 
 Then click on the service credentials tab and copy and paste the credentials it provides in your conversation node in Node-RED
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Service%20Credentials.png "Serv Cred")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Service%20Credentials.png "Serv Cred")
 
 11. Configure the second function node with the code below. All this node does is, it builds a response, incorporating the conversation context and bot response.
 ```javascript
@@ -177,12 +178,12 @@ return msg;
 
 13. If you want to know what kind of questions you can ask the bot, you can look back at the intents on your workspace homepage. **Very Important: DO NOT PRESS THE ENTER BUTTON WHEN YOU WANT TO SEND YOUR MESSAGE TO THE BOT. USE THE SEND BUTTON LOCATED UNDER THE TEXT FIELD**
 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversation/images/Bot%20Output.png "Output")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversation/images/Bot%20Output.png "Output")
 
 14. Free feel to add more functionalities to the workspace by adding more intents, entities and dialog options
 
 
-### Click [here](https://github.ibm.com/L-Gamerman/NodeRedEducation/tree/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversion) to go to the next topic
+### Click [here](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/tree/master/Conversion) to go to the next topic
 
 **Note:** [Source](https://github.com/watson-developer-cloud/node-red-labs/tree/master/basic_examples/conversation) when creating this tutorial
 
