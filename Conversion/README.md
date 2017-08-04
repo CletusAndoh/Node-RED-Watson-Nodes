@@ -16,12 +16,12 @@ Lets convert a PDF file to normalizaed text.
 ### Instructions
 
 1. Head over to bluemix and search for "document conversion" in the catalog. Click on it, leave it unbound, choose the standard plan and create the service. 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversion/images/Service.png "Service")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversion/images/Service.png "Service")
 
 2. Open your Node-RED application and drag out a convert node. Double click on it and you will be required to enter a username and password. Head back over to bluemix, click on service credentials and view credentials. Copy the username and password into the convert node in Node-RED.
 
 3. Configure the conversion node like this
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversion/images/Conversion%20Config.png "CConfig")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversion/images/Conversion%20Config.png "CConfig")
 
 4. Configure the function node with the code below:
 ```javascript
@@ -42,14 +42,14 @@ msg = {
 return msg;
 ```
 5. The flow should look like this
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversion/images/Flow.png "Flow")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversion/images/Flow.png "Flow")
 
 6. Your result should be similar to this. 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversion/images/PDF%20Result.png "Result")
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversion/images/PDF%20Result.png "Result")
 
 
 To convert an HTML page to plain text, copy and paste the URL of the page in an inject node. Wire the node with a convert and debug node as so. Set the target of the convert node, Either normalized text, normalized HTML or answer units(JSON)
 
-![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversion/images/Inject%20Config.png "IConfig") ![picture alt](https://github.ibm.com/L-Gamerman/NodeRedEducation/blob/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Conversion/images/HTML%20Result.png "Result") 
+![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversion/images/Inject%20Config.png "IConfig") ![picture alt](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/blob/master/Conversion/images/HTML%20Result.png "Result") 
 
-### Click [here](https://github.ibm.com/L-Gamerman/NodeRedEducation/tree/master/Chapter%205%20-%20Watson%20%26%20Cognitive%20API%20Nodes/Discovery) to go to the next topic
+### Click [here](https://github.com/CletusAndoh/Node-RED-Watson-Nodes/tree/master/Discovery) to go to the next topic
